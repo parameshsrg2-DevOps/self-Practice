@@ -1,0 +1,4 @@
+- name: Remove Nginx from the server
+  ansible.builtin.yum:
+    name: nginx
+    state: absent
