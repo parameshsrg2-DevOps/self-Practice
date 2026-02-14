@@ -6,9 +6,11 @@ SG_ID="sg-0f57b313ae45eaff0"
 
 for instance in $@
 do
-# Configuration
-AMI_ID="ami-0220d79f3f480ecf5"
-INSTANCE_TYPE="t2.micro"
-SECURITY_GROUP_ID="sg-0f57b313ae45eaff0"
-INSTANCE_NAME="mangodb"
+INSTANCE_ID=$( aws ec2 run-instances \
+    --image-id $AMI_ID \
+    --instance-type "t3.micro" \
+    --security-group-ids $SG_ID \
+    --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$instance}]" \
+    --query 'Instances[0].InstanceId' \
+    --output text )
 done
