@@ -1,4 +1,0 @@
-- name: Remove Nginx from the server
-  ansible.builtin.dnf:
-    name: nginx
-    state: absent
