@@ -10,3 +10,4 @@ if [ $USERID -ne 0 ]; then
 fi
 
 mkdir -p $LOGS_FOLDER
+touch -p $LOGS_FILE
