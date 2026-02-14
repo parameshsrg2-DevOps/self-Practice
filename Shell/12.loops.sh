@@ -20,7 +20,7 @@ VALIDATE(){
     fi
 }
 
-for package in $@ # sudo sh 14-loops.sh nginx mysql nodejs
+for package in $@ # sudo sh 14-loops.sh nginx mysql nodejs tomcat
 do
     dnf list installed $package &>>$LOGS_FILE
     if [ $? -ne 0 ]; then
