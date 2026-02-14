@@ -1,6 +1,6 @@
 #!/bin/bash
 
-START_TIME=$(+%s) #(date) 
+START_TIME=$(date +%Y-%m-%d_%H:%M:%S) 
 
 echo "Script executed at: $START_TIME"
 
